@@ -9,6 +9,7 @@ public class Slide : MonoBehaviour
     [SerializeField] private Vector2 _velocity;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _speed;
+    [SerializeField] private float jumpHeight;
 
     private Rigidbody2D _rb2d;
 
@@ -38,7 +39,7 @@ public class Slide : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && _grounded == true)
         {
-            _velocity.y += 5;
+            _velocity.y += jumpHeight;
         }
 
         Vector2 alongSurface = Vector2.Perpendicular(_groundNormal);
